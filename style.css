@@ -1,0 +1,28 @@
+div{
+    font-size: 2em;
+    background-color: gray;
+    text-align: center;
+}
+
+input{
+    float: left;
+    margin-right: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+#add {
+    float: right;
+    margin-left: 10px;
+}
+
+label{
+    font-family: sans-serif;
+}
+
+.remove{
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    float: right;
+}
