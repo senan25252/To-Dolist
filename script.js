@@ -1,5 +1,6 @@
 const AddButton = document.getElementById("add");
 let Contetns = [];
+let Titles = [];
 let lastIndex = 0;
 
 const load = localStorage.getItem("subjects");
@@ -12,6 +13,15 @@ if (load) {
 } else {
     console.log("VERİ BULUNAMADI");
 }
+
+setInterval(() => {
+    Titles.forEach(div => {
+        const checkbox = div.querySelector('input[type="checkbox"]');
+        if (checkbox) {
+            div.style.backgroundColor = checkbox.checked ? "#d4edda" : "";
+        }
+    });
+}, 16);
 
 function save() {
     localStorage.setItem("subjects", JSON.stringify(Contetns));
@@ -56,6 +66,7 @@ function CreateObject(subject, checked) {
         save();
     }
 
+    Titles.push(div);
     Contetns.push({ subject: subject, checked: checked });
     save();
 }
